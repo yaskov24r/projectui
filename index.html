@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="text-align: center;">
+  <div id="backgroundArea">
+    <img class="background-image"
+    src="https://localhost:7045/api/BackgroundImage/2"
+    alt="Image" />
+    <div class="forms">
+      <form id="imageForm" enctype="multipart/form-data">
+        <input type="file" id="imageInput" accept="image/*" />
+        <button type="submit">Upload</button>
+      </form>
+      <form id = "changeBg">
+        <input type="number" id="changeBgNumber" />
+        <button type="submit">Change</button>
+      </form>
+    </div>
+  </div>
+  
+  <div class="panel">
+    <form class="form" id="create-indicator-form">
+      <input id="title" type="text" placeholder="Title">
+      <input id="base_value" type="text" placeholder="Base value">
+      <input id="unit" type="text" placeholder="Unit">
+      <input id="x" type="number" min="0" placeholder="X">
+      <input id="y" type="number" min="0" placeholder="Y">
+      <button type="submit" value="Create">Create</button>
+    </form>
+  </div>
+
+  <div id = "hidden-form">
+    <form id = "update-indicator-form">
+      <input id ="id" type = "hidden"/>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

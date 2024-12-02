@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.background-image{
+    height: 100%;
+    z-index: -1;
+    margin: 0 auto;
+}
+
+body{
+    overflow: hidden;
+}
+
+.form{
+    border: 1px black solid;
+    margin: 20px;
+}
+
+input{
+    display: block;
+    margin: 10px auto;
+}
+
+.panel{
+    position: absolute;
+    width: 250px;
+}
+
+.indicator{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+}
+
+.indicator-value{
+    font-size: 24px;
+    margin: 5px;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    width: fit-content;
+}
+
+#backgroundArea{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+#hidden-form {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  visibility: hidden;
+}
+
+.forms{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.diagram-button{
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
