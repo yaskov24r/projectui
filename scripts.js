@@ -299,3 +299,46 @@ function createChart(id, chartName, parentElement, values){
     console.log("Chart created:", ctx.id);
     return chart;
 }
+
+function updateClock() {
+  const clockElement = document.getElementById('clock');
+  const now = new Date();
+  
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+  let ampm = hours >= 12 ? 'PM' : 'AM';
+  
+  hours = hours % 12;
+  hours = hours ? hours : 12; // 12 годинний формат
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+
+  const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+  clockElement.textContent = timeString;
+}
+
+// Функція для відображення календаря
+function updateCalendar() {
+  const calendarElement = document.getElementById('calendar');
+  const now = new Date();
+
+  const daysOfWeek = ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'Пятниця', 'Субота'];
+  const monthsOfYear = ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'];
+
+  const dayOfWeek = daysOfWeek[now.getDay()];
+  const dayOfMonth = now.getDate();
+  const month = monthsOfYear[now.getMonth()];
+  const year = now.getFullYear();
+
+  const dateString = `${dayOfWeek}, ${dayOfMonth} ${month} ${year}`;
+  calendarElement.textContent = dateString;
+}
+
+// Оновлення годинника кожну секунду
+setInterval(updateClock, 1000);
+updateClock();  // Ініціалізуємо годинник одразу
+
+// Оновлення календаря кожну хвилину
+setInterval(updateCalendar, 60000);
+updateCalendar();  // Ініціалізуємо календар одразу
